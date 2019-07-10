@@ -1,0 +1,32 @@
+<div class="container login-back">
+  <div class="row">
+    <div class="col-lg-4 offset-lg-3">
+        <div class="text-center login-note"><strong>PLEASE LOGIN TO APP</strong></div>
+        <div class="text-center">Enter Your credentials to login.</div>
+        <div class="panel login-form">
+          <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+            <div class="form-group">
+              <label for="email">UserName:</label>
+              <input class="form-control" type="text" name="UserName" value="" placeholder="admin" formControlName="Username" />
+              <span>Your unique UserName to app</span>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input class="form-control" type="password" name="Password" value="" placeholder="Password" formControlName="Password"/>
+              <span>Your strong password</span>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" name="name" value="" /><strong>Remember Me</strong></label>
+
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-success form-control">Login</button>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-default form-control">Registration</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>

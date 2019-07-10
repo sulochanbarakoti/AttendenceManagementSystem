@@ -1,0 +1,60 @@
+<div class="form-group">
+  <div class="select">
+    <label>Select User:</label>
+    <select [(ngModel)]="selectedLevel" (change)="selected()">
+      <option *ngFor="let item of username" [ngValue]="item.username">{{item.username}}</option>
+    </select>
+  </div>
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Punch In</a></li>
+      <li><a data-toggle="tab" href="#menu1">Punch Out</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Time In:</th>
+              <th>Date:</th>
+              <th>In Message:</th>
+              <th>Location</th>
+              <button (click)="exportAsXLSX()"><i class="glyphicon glyphicon-arrow-down" style="font-size:10px;color:blue"></i></button>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of InData">
+              <td>{{user.username}}</td>
+              <td>{{user.date}}</td>
+              <td>{{user.time}}</td>
+              <td>{{user.message}}</td>
+              <td><a href="http://www.google.com/maps/place/{{user.latitude}},{{user.longitude}}">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Time Out:</th>
+              <th>Date:</th>
+              <th>Out Message:</th>
+              <th>Location</th>
+              <button (click)="exportAsXLSX2()"><i class="glyphicon glyphicon-arrow-down" style="font-size:10px;color:blue"></i></button>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of OutData">
+              <td>{{user.username}}</td>
+              <td>{{user.date}}</td>
+              <td>{{user.time}}</td>
+              <td>{{user.message}}</td>
+              <td><a href="http://www.google.com/maps/place/{{user.latitude}},{{user.longitude}}">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

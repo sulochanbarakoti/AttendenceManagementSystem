@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userInfo">
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phoneNumber}}</td>
+      <td>{{user.address}}</td>
+      <td>{{user.roleType}}</td>
+      <td>
+        <button class="btn btn-primary glyphicon glyphicon-pencil"></button>
+        <button class="btn btn-danger glyphicon glyphicon-remove"></button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

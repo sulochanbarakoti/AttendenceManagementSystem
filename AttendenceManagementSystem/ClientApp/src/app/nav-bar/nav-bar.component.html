@@ -1,0 +1,10 @@
+<div class="row">
+  <ul>
+    <li><a [routerLink]='["home"]'  class="active"><span class='glyphicon glyphicon-home'></span>Home</a></li>
+    <li *ngIf="_isValid.isValid"><a [routerLink]='["register"]'  >Register</a></li>
+    <li *ngIf="_isValid.isValid"><a [routerLink]='["user"]'  >Users</a></li>
+    <li *ngIf="_isValid.isValid"><a [routerLink]='["report"]'  >Report</a></li>
+    <li><a [routerLink]='["leave"]'>Leave</a></li>
+    <li><a [routerLink]='[""]' (click)='logOut()'>Logout</a></li>
+  </ul>
+</div>

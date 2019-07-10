@@ -1,0 +1,65 @@
+<h1>Hello, {{User}}</h1>
+<div class="clear-fix"></div>
+<div class="home-body">
+  <b><span>Date: </span>{{Date | date:'medium'}}</b>
+</div>
+<div class="input-message">
+  <h4><b>Message:</b></h4>
+  <textarea #titleInput></textarea>
+</div>
+<div class="home-button">
+  <button class="btn btn-primary" id="punchInButton" (click)="punchIn(titleInput.value)">Punch In</button>
+  <button class="btn btn-danger"  id="punchOutButton" (click)="punchOut(titleInput.value)">Punch Out</button>
+</div>
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home" (click)="punchInData()">Punch In</a></li>
+    <li><a data-toggle="tab" href="#menu1" (click)="punchOutData()">Punch Out</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Time In:</th>
+            <th>Date:</th>
+            <th>In Message:</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of punchInDatas">
+            <td>{{user.username}}</td>
+            <td>{{user.date}}</td>
+            <td>{{user.time}}</td>
+            <td>{{user.message}}</td>
+            <td><a href="http://www.google.com/maps/place/{{user.latitude}},{{user.longitude}}">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Time Out:</th>
+            <th>Date:</th>
+            <th>Out Message:</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of punchOutDatas">
+            <td>{{user.username}}</td>
+            <td>{{user.date}}</td>
+            <td>{{user.time}}</td>
+            <td>{{user.message}}</td>
+            <td><a href="http://www.google.com/maps/place/{{user.latitude}},{{user.longitude}}">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

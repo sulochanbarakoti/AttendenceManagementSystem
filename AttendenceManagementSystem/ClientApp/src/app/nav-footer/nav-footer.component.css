@@ -1,0 +1,12 @@
+.row{
+    background-color: gray;
+    position: relative;
+color: white;
+height: 25px;
+width: 100%;
+padding-top: 5px;
+margin: 0px 0px;
+}
+.row a{
+    color: white;
+}
